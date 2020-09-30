@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>疫情可视化</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+	<script src="https://d3js.org/d3-path.v1.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <!-- 头部 -->
+  <header>
+    <h1>新冠疫情对社会经济居民生活的影响可视化分析</h1>
+    <div class="showTime"></div>
+    <!-- 显示时间 -->
+    <script>
+      var t = null;
+      t = setTimeout(time, 1000); //開始运行
+      function time() {
+        clearTimeout(t); //清除定时器
+        dt = new Date();
+        var y = dt.getFullYear();
+        var mt = dt.getMonth() + 1;
+        var day = dt.getDate();
+        var h = dt.getHours(); //获取时
+        var m = dt.getMinutes(); //获取分
+        var s = dt.getSeconds(); //获取秒
+        document.querySelector(".showTime").innerHTML =
+          "当前时间：" +
+          y +
+          "年" +
+          mt +
+          "月" +
+          day +
+          "-" +
+          h +
+          "时" +
+          m +
+          "分" +
+          s +
+          "秒";
+        t = setTimeout(time, 1000); //设定定时器，循环运行
+      }
+    </script>
+  </header>
+
+  <!-- 页面主体部分 -->
+  <section class="mainbox">
+    <div class="column">
+      <div class="panel1-1 map">
+        <h2>30省份一季度GDP数据</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel1-2 raderchart">
+        <h2>疫情期间三次产业定基环比负增长图</h2>
+        <div class="chart">
+        </div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="panel2-1 map">
+        
+        <button class="button" onclick="button_map()" >省G D P</button>
+        
+        <button class="button" onclick="button_worldcloud()" >疫情词云</button>
+        
+        <button class="button" onclick="button_parallel()" >行业影响</button>
+        
+        <button class="button" onclick="button_rose()" >平均指数</button>
+        
+        <button class="button" onclick="button_compare()" >股市对比</button>
+        
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel2-2">
+	    <a href="i2.html">
+        <button class="button" >疫情热点</button>
+		</a>
+
+        <button class="button" onclick="button_cpi()" >三年消费</button>
+        
+        <button class="button" onclick="button_cpiall()" >一年消费</button>
+                
+        <button class="button" onclick="button_positive()" >积极情绪</button>
+        
+        <button class="button" onclick="button_negtive()" >消极情绪</button>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="panel3-1 parallel">
+        <h2>行业影响平行坐标图</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel3-2 themeriver">
+        <h2>三大产业上半年指数</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+  </section>
+  <script src="js/d3.min.js"></script>
+  <script src="js/flexible.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/echarts-wordcloud.min.js"></script>
+  <script src="js/china.js"></script>
+  <script src="js/rose.js"></script>
+  <script src="js/panel2_1.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/compare.js"></script>
+  <script src="js/parallel.js"></script>
+  <script src="js/panel2-2.js"></script>
+  <script src="js/themeriver.js"></script>
+  <script src="js/cpi.js"></script>
+  <script src="js/cpi_all.js"></script>
+  <script src="js/radarChart.js"></script>
+  <script src="js/raderchart1.js"></script>
+  <script src="js/raderchart2.js"></script>
+  <script src="js/wordcould.js"></script>
+  <script src="js/positive.js"></script>
+  <script src="js/negtive.js"></script>
+  <script src="js/hotpoints.js"></script>
+</body>
+</html>

@@ -1,8 +1,4 @@
-# 数据内容大赛参赛作品
-
-下载完成后直接点开index.html文件即可
-
-下载完成后直接点开index.html文件即可
+# DataCompetionEntry
 
 下载完成后直接点开index.html文件即可
 

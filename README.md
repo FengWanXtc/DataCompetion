@@ -1,4 +1,4 @@
-# DataCompetionEntry
+# DataCompetitionEntry
 
 下载完成后直接点开index.html文件即可
 
